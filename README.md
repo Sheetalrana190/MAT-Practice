@@ -15,7 +15,6 @@ Volume = width × length × height
 ## What This Project Does
 
 - **Calculates the Volume**: 
-  - Formula used: 
 ```
 Volume = width × length × height
 ```
@@ -32,29 +31,7 @@ where `width = 2`, `length = 3`, and `height = 5`.
 - **Includes Tests**:
   - Comprehensive tests to ensure the calculator works perfectly.
 
----
-## How It Works
 
-The `calculateVolumeOfaPrism` function:
-1. Accepts three inputs: `width`, `length`, and `height`.
-2. Checks for invalid inputs:
-   - If any value is negative, it throws an error like `Width should be positive`.
-   - If any value is zero, it throws an error like `Length should not be zero`.
-3. Returns the calculated volume if all inputs are valid.
-
-### Example Code
-You can use the function in your own script like this:
-```typescript
-import { calculateVolumeOfaPrism } from './volume';
-
-const width = 2;
-const length = 3;
-const height = 5;
-
- volume = calculateVolumeOfaPrism(width, length, height);
-
-}
-```
 ---
 ## Prerequisites
 
@@ -67,21 +44,6 @@ If you don’t have these installed, download and install them first.
 
 ---
 
-## Project Structure
-```
-.
-├── src/
-│   ├── volume.ts         # Main implementation of the calculateVolumeOfaPrism function.
-│   └── volume.test.ts    # Folder containing test files.
-├── dist/                 # Compiled JavaScript files after TypeScript compilation.
-├── jest.config.js        # Jest configuration file.
-├── package.json          # Project metadata and dependencies.
-├── tsconfig.json         # TypeScript configuration file.
-└── README.md             # Documentation (this file).
-
-```
-
----
 
 ## Usage 
 
@@ -132,94 +94,3 @@ The test results will show whether the program is calculating volumes correctly 
 
 ---
 
-## TypeScript Configuration (`tsconfig.json`)
-
-Create a `tsconfig.json` file in the project root to enable TypeScript support for Jest:
-
-```json
-{
-  "compilerOptions": {
-    "target": "ES6",
-    "module": "CommonJS",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist",
-    "rootDir": "./"
-  }
-}
-```
-
----
-
-## Dependencies & Scripts (`package.json`)
-
-Ensure your `package.json` file includes the necessary dependencies:
-```Bash
-npm install --save-dev jest @types/jest ts-jest
-```
-
-```json
-{
-  "name": "prism-volume-calculator",
-  "version": "0.1.0",
-  "description": "A TypeScript project to calculate the volume of a prism with Jest tests",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "@types/jest": "^29.0.0",
-    "jest": "^29.0.0",
-    "ts-jest": "^29.0.0",
-    "typescript": "^5.0.0"
-  }
-}
-```
-
----
-
-## Jest Configuration (`jest.config.js`)
-
-Create a `jest.config.js` file to ensure Jest works with TypeScript:
-
-```js
-module.exports = {
-  preset: 'ts-jest',
-  testEnvironment: 'node'
-};
-```
-
----
-
-## Running Tests
-
-To execute the tests, run:
-
-```Bash
-npm run test
-```
-
----
-
-## Expected Test Output
-
-After running tests, you should see output similar to:
-
-```
-PASS  ./tests/volume.test.ts
-✓ should calculate the volume correctly (X ms)
-✓ should throw an error when length is negative (X ms)
-✓ should throw an error when height is negative (X ms)
-✓ should throw an error when width is negative (X ms)
-✓ should throw an error when length is zero (X ms)
-✓ should throw an error when height is zero (X ms)
-✓ should throw an error when width is zero (X ms)
-
-Test Suites: 1 passed, 1 total
-Tests:       7 passed, 7 total
-```
-
----
