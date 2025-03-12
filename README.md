@@ -31,7 +31,7 @@ where `width = 2`, `length = 3`, and `height = 5`.
 
 ---
 
-## Installation
+## Usage 
 
 Ensure you have **Node.js** and **npm** (or **yarn**) installed.
 
@@ -41,11 +41,13 @@ Ensure you have **Node.js** and **npm** (or **yarn**) installed.
    cd MAT-Practice
    ```
 
-2. Install dependencies:
-   ```sh
-   npm install
-   ```
+2. **Install Dependencies**:
+    - Make sure you have [Node.js](https://nodejs.org) installed.
 
+3. **Write Your Code**:
+    - Import the `calculateVolumeOfaPrism` function and use it in your script volume.test.ts:
+      ```typescript
+      import { calculateVolumeOfaPrism } from './volume';
 ---
 
 ## TypeScript Configuration (`tsconfig.json`)
