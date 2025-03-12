@@ -1,6 +1,7 @@
 # Volume Calculation of a Prism
 
-This project calculates the volume of a prism using TypeScript and includes Jest tests for validation.
+This project provides a utility to programmatically calculate the volume of a rectangular prism while validating input dimensions.
+
 
 ##  Formula
 The volume of a prism is calculated as:
@@ -9,24 +10,75 @@ The volume of a prism is calculated as:
 Volume = width × length × height
 ```
 
-For example:
+
+---
+## What This Project Does
+
+- **Calculates the Volume**: 
+  - Formula used: 
+```
+Volume = width × length × height
+```
+ 
+    For example:
 ```
 30 = 2 × 3 × 5
 ```
 where `width = 2`, `length = 3`, and `height = 5`.
 
+- **Validates Input**:
+  - Ensures width, length, and height are all positive and non-zero.
+  - Throws descriptive errors if the input is invalid (e.g., negative or zero values).
+- **Includes Tests**:
+  - Comprehensive tests to ensure the calculator works perfectly.
+
+---
+## How It Works
+
+The `calculateVolumeOfaPrism` function:
+1. Accepts three inputs: `width`, `length`, and `height`.
+2. Checks for invalid inputs:
+   - If any value is negative, it throws an error like `Width should be positive`.
+   - If any value is zero, it throws an error like `Length should not be zero`.
+3. Returns the calculated volume if all inputs are valid.
+
+### Example Code
+You can use the function in your own script like this:
+```typescript
+import { calculateVolumeOfaPrism } from './volume';
+
+const width = 2;
+const length = 3;
+const height = 5;
+
+ volume = calculateVolumeOfaPrism(width, length, height);
+
+}
+```
+---
+## Prerequisites
+
+Before getting started, ensure the following are installed on your system:
+1. [Node.js](https://nodejs.org/) (v14 or later)
+2. [npm](https://www.npmjs.com/) (comes with Node.js)
+3. [TypeScript](https://www.typescriptlang.org/) (v4 or later)
+
+If you don’t have these installed, download and install them first.
+
 ---
 
 ## Project Structure
 ```
- your-project-folder
-│──  src
-│   ├── volume.ts
-│   ├── volume.test.ts
-│── package.json
-│── tsconfig.json
-│── jest.config.js
-│── README.md
+.
+├── src/
+│   ├── volume.ts         # Main implementation of the calculateVolumeOfaPrism function.
+│   └── volume.test.ts    # Folder containing test files.
+├── dist/                 # Compiled JavaScript files after TypeScript compilation.
+├── jest.config.js        # Jest configuration file.
+├── package.json          # Project metadata and dependencies.
+├── tsconfig.json         # TypeScript configuration file.
+└── README.md             # Documentation (this file).
+
 ```
 
 ---
@@ -41,13 +93,43 @@ Ensure you have **Node.js** and **npm** (or **yarn**) installed.
    cd MAT-Practice
    ```
 
-2. **Install Dependencies**:
-    - Make sure you have [Node.js](https://nodejs.org) installed.
+### 2. Install Dependencies
+Run this command to install all necessary dependencies:
+```bash
+npm install
+```
 
-3. **Write Your Code**:
-    - Import the `calculateVolumeOfaPrism` function and use it in your script volume.test.ts:
-      ```typescript
-      import { calculateVolumeOfaPrism } from './volume';
+### 3. Build the Project
+Compile the TypeScript code into JavaScript:
+```bash
+npm run build
+```
+
+### 4. Run the Code
+Execute the compiled JavaScript file to see the program in action:
+```bash
+npm start
+```
+
+---
+
+## Running the Tests
+
+This project uses Jest to test the functionality of the volume calculation function. To run the tests:
+
+1. **Install Jest (if not already installed)**:
+   ```bash
+   npm install --save-dev jest @types/jest ts-jest
+   ```
+
+2. **Run Tests**:
+   Execute the test suite using the following command:
+   ```bash
+   npm test
+   ```
+
+The test results will show whether the program is calculating volumes correctly and handling invalid inputs properly.
+
 ---
 
 ## TypeScript Configuration (`tsconfig.json`)
