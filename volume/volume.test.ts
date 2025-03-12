@@ -22,9 +22,9 @@ describe("calculate the volume of a prism", () => {
         const length = -3;
         const height = 5;
     
-        const volume = calculateVolumeOfaPrism(width, length, height);
+        //const volume = calculateVolumeOfaPrism(width, length, height);
     
-        expect(() => volume).toThrow("Length should be possitive");
+        expect(() => calculateVolumeOfaPrism(width, length, height)).toThrow("Length should be possitive");
 
       });
     test.todo("should throw an error when height is negative");
