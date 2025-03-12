@@ -1,72 +1,141 @@
-# Volume Calculator
+#Volume Calculation of a Prism
 
-## Purpose
+This project calculates the volume of a prism using TypeScript and includes Jest tests for validation.
 
-This project provides a utility to programmatically calculate the volume of a rectangular prism while validating input dimensions.
+##  Formula
+The volume of a prism is calculated as:
 
----
+```
+Volume = width × length × height
+```
 
-## Features
-
-- **Create Volume Calculation:**
-    - Accepts width, length, and height as input parameters.
-    - Ensures that dimensions are positive and non-zero values.
-    - Computes the volume of the prism using the formula: `width * length * height`.
-
-- **Read Volume Data:**
-    - Outputs the calculated volume to the console.
-
-- **Validate Input:**
-    - Throws descriptive errors for invalid inputs:
-        - Negative dimensions (e.g., "Width should be positive").
-        - Zero dimensions (e.g., "Length should not be zero").
-
----
-## File Structure
-
-The project includes the following files:
-
-- **`volume.ts`**: Implements the `calculateVolumeOfaPrism` function.
-- **`volume.test.ts`**: Contains unit tests for the function, written using Jest.
-
----
-## Usage
-
-
-1. **Clone the Repository**:
-    ```bash
-    git clone git@github.com:Sheetalrana190/MAT-Practice.git
-    ```
-
-2. **Install Dependencies**:
-    - Make sure you have [Node.js](https://nodejs.org) installed.
-
-3. **Write Your Code**:
-    - Import the `calculateVolumeOfaPrism` function and use it in your script volume.test.ts:
-      ```typescript
-      import { calculateVolumeOfaPrism } from './volume';
-      ```
----
-
-## Test-Driven Development (TDD) Flowchart
-
-This project follows a TDD approach to ensure the function meets all specified requirements.
-
----
-## Testing
-
-Unit tests are provided using [Jest](https://jestjs.io/) to validate the functionality. Test cases include:
-
-- Successful calculation with valid inputs.
-- Handling negative dimensions.
-- Handling zero dimensions.
-
-### Running Tests
-
-- Run Tests:
-    ```bash
-    npm run test
-    ```
+For example:
+```
+30 = 2 × 3 × 5
+```
+where `width = 2`, `length = 3`, and `height = 5`.
 
 ---
 
+## Project Structure
+```
+ your-project-folder
+│──  src
+│   ├── volume.ts
+│   ├── volume.test.ts
+│── package.json
+│── tsconfig.json
+│── jest.config.js
+│── README.md
+```
+
+---
+
+## Installation
+
+Ensure you have **Node.js** and **npm** (or **yarn**) installed.
+
+1. Clone the repository:
+   ```sh
+   git clone git@github.com:Sheetalrana190/MAT-Practice.git
+   cd MAT-Practice
+   ```
+
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+
+---
+
+## TypeScript Configuration (`tsconfig.json`)
+
+Create a `tsconfig.json` file in the project root to enable TypeScript support for Jest:
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "rootDir": "./"
+  }
+}
+```
+
+---
+
+## Dependencies & Scripts (`package.json`)
+
+Ensure your `package.json` file includes the necessary dependencies:
+```Bash
+npm install --save-dev jest @types/jest ts-jest
+```
+
+```json
+{
+  "name": "prism-volume-calculator",
+  "version": "0.1.0",
+  "description": "A TypeScript project to calculate the volume of a prism with Jest tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^29.0.0",
+    "jest": "^29.0.0",
+    "ts-jest": "^29.0.0",
+    "typescript": "^5.0.0"
+  }
+}
+```
+
+---
+
+## Jest Configuration (`jest.config.js`)
+
+Create a `jest.config.js` file to ensure Jest works with TypeScript:
+
+```js
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'node'
+};
+```
+
+---
+
+## Running Tests
+
+To execute the tests, run:
+
+```Bash
+npm run test
+```
+
+---
+
+## Expected Test Output
+
+After running tests, you should see output similar to:
+
+```
+PASS  ./tests/volume.test.ts
+✓ should calculate the volume correctly (X ms)
+✓ should throw an error when length is negative (X ms)
+✓ should throw an error when height is negative (X ms)
+✓ should throw an error when width is negative (X ms)
+✓ should throw an error when length is zero (X ms)
+✓ should throw an error when height is zero (X ms)
+✓ should throw an error when width is zero (X ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       7 passed, 7 total
+```
+
+---
