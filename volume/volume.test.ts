@@ -65,7 +65,4 @@ describe("calculate the volume of a prism", () => {
       expect(() => calculateVolumeOfaPrism(width, length, height)).toThrow("Width should not be zero");
 
     });
-    test.todo("should throw an error when length is empty");
-    test.todo("should throw an error when height is empty");
-    test.todo("should throw an error when width is empty");
 });

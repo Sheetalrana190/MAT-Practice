@@ -1,17 +1,17 @@
 export function calculateVolumeOfaPrism(
     width:number,
     length:number,
-    hight:number) { 
+    height:number) { 
         if (length < 0){
             throw new Error("Length should be possitive");
         }
         if (length == 0){
             throw new Error("Length should not be zero");
         }
-        if (hight < 0){
+        if (height < 0){
             throw new Error("Hight should be possitive");
         }
-        if (hight == 0){
+        if (height == 0){
             throw new Error("Hight should not be zero");
         }
         if (width < 0){
@@ -20,5 +20,6 @@ export function calculateVolumeOfaPrism(
         if (width == 0){
             throw new Error("Width should not be zero");
         }
-    return width * length * hight
+  
+    return width * length * height
 }
