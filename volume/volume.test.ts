@@ -29,4 +29,10 @@ describe("calculate the volume of a prism", () => {
       });
     test.todo("should throw an error when height is negative");
     test.todo("should throw an error when width is negative");
+    test.todo("should throw an error when length is zero");
+    test.todo("should throw an error when height is zero");
+    test.todo("should throw an error when width is zero");
+    test.todo("should throw an error when length is empty");
+    test.todo("should throw an error when height is empty");
+    test.todo("should throw an error when width is empty");
 });
