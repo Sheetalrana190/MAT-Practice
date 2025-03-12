@@ -1,4 +1,4 @@
-#Volume Calculation of a Prism
+# Volume Calculation of a Prism
 
 This project calculates the volume of a prism using TypeScript and includes Jest tests for validation.
 
