@@ -5,5 +5,8 @@ export function calculateVolumeOfaPrism(
         if (length < 0){
             throw new Error("Length should be possitive");
         }
+        if (hight < 0){
+            throw new Error("Hight should be possitive");
+        }
     return width * length * hight
 }
