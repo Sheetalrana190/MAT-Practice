@@ -33,10 +33,38 @@ describe("calculate the volume of a prism", () => {
       expect(() => calculateVolumeOfaPrism(width, length, height)).toThrow("Hight should be possitive");
 
     });
-    test.todo("should throw an error when width is negative");
-    test.todo("should throw an error when length is zero");
-    test.todo("should throw an error when height is zero");
-    test.todo("should throw an error when width is zero");
+    test("should throw an error when width is negative", () => {
+      const width = -2;
+      const length = 3;
+      const height = 5;
+  
+      expect(() => calculateVolumeOfaPrism(width, length, height)).toThrow("Width should be possitive");
+
+    });
+    test("should throw an error when length is zero", () => {
+      const width = 2;
+      const length = 0;
+      const height = 5;
+  
+      expect(() => calculateVolumeOfaPrism(width, length, height)).toThrow("Length should not be zero");
+
+    });
+    test("should throw an error when height is zero", () => {
+      const width = 2;
+      const length = 3;
+      const height = 0;
+  
+      expect(() => calculateVolumeOfaPrism(width, length, height)).toThrow("Hight should not be zero");
+
+    });
+    test("should throw an error when width is zero", () => {
+      const width = 0;
+      const length = 3;
+      const height = 5;
+  
+      expect(() => calculateVolumeOfaPrism(width, length, height)).toThrow("Width should not be zero");
+
+    });
     test.todo("should throw an error when length is empty");
     test.todo("should throw an error when height is empty");
     test.todo("should throw an error when width is empty");
